@@ -179,10 +179,10 @@ Surface DrawHexagon(const RGBA & color)
     }
     else
     {
-	r = 22;
-	l = 13;
-	w = CELLW;
-	h = CELLH;
+        r = 22;
+        l = 10;
+        w = CELLW;
+        h = CELLH;
     }
 
     Surface sf(Size(w, h), false);
@@ -218,12 +218,9 @@ Surface DrawHexagonShadow(void)
 	h = 52;
     }
 
-    Surface sf(Size(w, h), true);
+    Surface sf( Size( w, h ), 32, true );
     RGBA shadow = RGBA(0, 0, 0, 0x30);
-
     Rect rt(0, l, w, 2 * l);
-    sf.FillRect(rt, shadow);
-
     for(int i = 1; i < w / 2; i += 2)
     {
 	--rt.y;
